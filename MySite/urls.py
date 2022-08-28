@@ -12,4 +12,6 @@ router.register(r'topic/(?P<topic_slug>[\w-]+)', MessageViewSet, basename='messa
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('chat/', include(router.urls)),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 ]

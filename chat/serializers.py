@@ -7,6 +7,7 @@ from chat.models import Message, Topic
 class MessageSerializer(ModelSerializer):
     owner_username = serializers.CharField(source='owner.username', read_only=True)
     owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    is_active = serializers.HiddenField(default=True)
 
     class Meta:
         model = Message
@@ -16,6 +17,7 @@ class MessageSerializer(ModelSerializer):
 class TopicSerializer(ModelSerializer):
     owner_username = serializers.CharField(source='owner.username', read_only=True)
     owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    is_active = serializers.HiddenField(default=True)
 
     class Meta:
         model = Topic
