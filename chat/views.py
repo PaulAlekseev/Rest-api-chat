@@ -5,11 +5,14 @@ from .permissions import IsOwnerOrReadOnly
 
 
 class TopicViewSet(viewsets.ModelViewSet):
-    queryset = Topic.objects.all().select_related(
-        'owner',
-    )
     serializer_class = TopicSerializer
     permission_classes = (IsOwnerOrReadOnly, )
+
+    def get_queryset(self):
+        queryset = Topic.objects.all().select_related(
+            'owner',
+        )
+        return queryset
 
 
 class MessageViewSet(viewsets.ModelViewSet):
@@ -19,6 +22,7 @@ class MessageViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         topic_slug = self.kwargs.get('topic_slug')
 
-        return Message.objects.filter(
+        queryset = Message.objects.filter(
             topic__slug=topic_slug,
         )
+        return queryset

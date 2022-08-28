@@ -6,8 +6,8 @@ from chat.views import TopicViewSet, MessageViewSet
 
 
 router = routers.SimpleRouter()
-router.register(r'topics', TopicViewSet)
-router.register(r'watch/(?P<topic_slug>[\w-]+)', MessageViewSet, basename='messages')
+router.register(r'topics', TopicViewSet, basename='topics')
+router.register(r'topic/(?P<topic_slug>[\w-]+)', MessageViewSet, basename='messages')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
