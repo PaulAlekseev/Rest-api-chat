@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
 
-    'users.apps.UsersConfig',
-    'chat.apps.ChatConfig',
+    'MySite.apps.users.apps.UsersConfig',
+    'MySite.apps.chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [

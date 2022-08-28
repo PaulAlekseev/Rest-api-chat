@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from chat.views import TopicViewSet, MessageViewSet
+from MySite.apps.chat.views import TopicViewSet, MessageViewSet
 
 
 router = routers.SimpleRouter()
