@@ -11,7 +11,7 @@ class CustomUserManager(BaseUserManager):
 
     def create_user(self, username, email, date_of_birth, password=None):
         """
-        Creates and saves a User instance with th given username, email,
+        Creates and saves a User instance with the given username, email,
         date of birth and password.
         """
         if username is None:
@@ -33,7 +33,7 @@ class CustomUserManager(BaseUserManager):
 
     def create_superuser(self, username, email, date_of_birth, password=None):
         """
-        Creates and saves a superuser instance with th given username, email,
+        Creates and saves a superuser instance with the given username, email,
         date of birth and password.
         """
         user = self.create_user(

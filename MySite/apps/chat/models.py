@@ -20,6 +20,9 @@ class Topic(models.Model):
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ('-is_active', '-created', )
+
     def __str__(self):
         return self.name
 
@@ -39,3 +42,9 @@ class Message(models.Model):
         blank=False
     )
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-created', )
+
+    def __str__(self):
+        return f"{self.topic} on {self.created.strftime('%m/%d/%Y, %H:%M:%S')}"

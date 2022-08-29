@@ -7,5 +7,4 @@ urlpatterns = [
 
     re_path(r'^api/', include('MySite.apps.chat.urls')),
     re_path(r'^api/', include('MySite.apps.users.urls')),
-    re_path(r'^api/', include('MySite.apps.users.urls')),
 ]
