@@ -5,6 +5,6 @@ from django.urls import include, re_path
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
 
-    re_path(r'^api/', include('MySite.apps.chat.urls')),
-    re_path(r'^api/', include('MySite.apps.users.urls')),
+    re_path(r'^api/', include('MySite.apps.chat.urls', namespace='chat')),
+    re_path(r'^api/', include('MySite.apps.users.urls', namespace='auth')),
 ]
