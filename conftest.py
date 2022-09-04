@@ -1,21 +1,32 @@
 import pytest
 from pytest_factoryboy import register
 from rest_framework.test import APIClient
-from tests.factories import UserFactory, TokenFactory
+from tests.factories import UserFactory, TokenFactory, TopicFactory
 
 
 register(UserFactory)
 register(TokenFactory)
+register(TopicFactory)
 
 
 @pytest.fixture
-def user(db, user_factory):
+def user1(db, user_factory):
     return user_factory.create()
 
 
 @pytest.fixture
-def authorized_token(db, token_factory):
-    return token_factory.create()
+def token_user1(db, token_factory, user1):
+    return token_factory.create(user=user1)
+
+
+@pytest.fixture
+def user2(db, user_factory):
+    return user_factory.create(username='User2', email='User2@mail.com')
+
+
+@pytest.fixture
+def token_user2(db, token_factory, user2):
+    return token_factory.create(user=user2)
 
 
 @pytest.fixture

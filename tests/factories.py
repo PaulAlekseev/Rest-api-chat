@@ -8,9 +8,9 @@ class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = CustomUser
 
-    username = factory.Faker('first_name')
+    username = 'User1'
     password = 'qwerty123456'
-    email = factory.Faker('email')
+    email = 'User1@mail.com'
     date_of_birth = factory.Faker('date')
 
 
@@ -19,8 +19,8 @@ class TopicFactory(factory.django.DjangoModelFactory):
         model = Topic
 
     owner = factory.SubFactory(UserFactory)
-    name = factory.Faker('sentence', nb_words=3)
-    slug = factory.Faker('sentence', nb_words=3)
+    name = 'Topic1'
+    slug = 'Topic1'
 
 
 class MessageFactory(factory.django.DjangoModelFactory):
