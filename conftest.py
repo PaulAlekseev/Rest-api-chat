@@ -14,7 +14,7 @@ def user(db, user_factory):
 
 
 @pytest.fixture
-def token(db, token_factory):
+def authorized_token(db, token_factory):
     return token_factory.create()
 
 
