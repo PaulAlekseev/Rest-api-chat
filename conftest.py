@@ -1,12 +1,13 @@
 import pytest
 from pytest_factoryboy import register
 from rest_framework.test import APIClient
-from tests.factories import UserFactory, TokenFactory, TopicFactory
+from tests.factories import UserFactory, TokenFactory, TopicFactory, MessageFactory
 
 
 register(UserFactory)
 register(TokenFactory)
 register(TopicFactory)
+register(MessageFactory)
 
 
 @pytest.fixture

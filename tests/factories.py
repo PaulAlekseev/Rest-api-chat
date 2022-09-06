@@ -29,7 +29,7 @@ class MessageFactory(factory.django.DjangoModelFactory):
 
     owner = factory.SubFactory(UserFactory)
     topic = factory.SubFactory(TopicFactory)
-    text = factory.Faker('sentence', nb_word=10)
+    text = 'Message from someone'
 
 
 class TokenFactory(factory.django.DjangoModelFactory):
